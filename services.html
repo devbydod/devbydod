@@ -1,0 +1,116 @@
+<!DOCTYPE HTML><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="Dev by DOD" content="Website development company">
+  <meta name="Description" content="Web development and Designing associate">
+  <meta name="author" content="Dolapo">
+  <meta http-equiv="refresh" content="400">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <!-- Google Fonts --> 
+   <link href="https://fonts.googleapis.com/css2?family=Corben:wght@400;700&display=swap" rel="stylesheet">
+     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="style.css">  <style>
+   
+    
+  </style>  <title>DEV BY DOD | SERVICES</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo">DEV BY<span> DOD</span></div>
+    <nav class="nav" style="position: relative; right:65px;">
+      <ul>
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="services.html">SERVICES</a></li>
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="contact.html">CONTACT</a></li>
+      </ul>
+    </nav>
+  </header>
+  <section>
+     <!-- Service Block -->
+    
+  <h2>Our Services</h2>
+
+<div class="service">
+  <h3>Web Design</h3>
+  <div class="custom-slideshow">
+    <img src="images/launchpic.png" class="slide active" />
+    <img src="images/webdesign2.png" class="slide" />
+    <img src="images/webpicfolder/1.png" class="slide" />
+  </div>
+  <div class="custom-dots"></div>
+  <p>We design modern, responsive websites for brands and businesses.</p>
+</div>
+
+<!-- Service Block -->
+<div class="service">
+  <h3>Branding and Logos</h3>
+  <div class="custom-slideshow">
+    <img src="images/webpic1.jpg" class="slide active" />
+    <img src="images/brand name.jpg" class="slide" />
+    <img src="images/DevBYDOD.png" class="slide" />
+  </div>
+    <div class="custom-dots"></div>
+  <p>We help shape your digital presence with unique logos, colors, and brand strategy according to your liking.</p>
+</div>
+
+<!-- Service Block -->
+<div class="service">
+  <h3>Website Redesigning (Unhosted Projects)</h3>
+  <div class="custom-slideshow">
+    <img src="images/webredesign1.png" class="slide active" />
+    <img src="images/redesign2.png" class="slide" />
+    <img src="images/resdesign.jpg" class="slide" />
+  </div>
+    <div class="custom-dots"></div>
+  <p>Have an old or offline website idea sitting unused? We will bring it back to life with a modern look, mobile responsiveness, and clean structure ready for hosting!</p>
+</div>
+
+  </section>
+
+
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+    const slideshows = document.querySelectorAll(".custom-slideshow");
+
+    slideshows.forEach((slideshow, index) => {
+      const slides = slideshow.querySelectorAll(".slide");
+      const dotContainer = slideshow.nextElementSibling; // Assuming .custom-dots is next
+      let currentSlide = 0;
+
+      // Create dots
+      slides.forEach((_, i) => {
+        const dot = document.createElement("span");
+        dot.classList.add("dot");
+        if (i === 0) dot.classList.add("active");
+        dotContainer.appendChild(dot);
+
+        // Add click event
+        dot.addEventListener("click", () => {
+          showSlide(i);
+        });
+      });
+
+      const dots = dotContainer.querySelectorAll(".dot");
+
+      function showSlide(index) {
+        slides.forEach(s => s.classList.remove("active"));
+        dots.forEach(d => d.classList.remove("active"));
+
+        slides[index].classList.add("active");
+        dots[index].classList.add("active");
+
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        let next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      setInterval(nextSlide, 4000); // auto-slide
+    });
+  });
+
+  </script></body>
+</html>
